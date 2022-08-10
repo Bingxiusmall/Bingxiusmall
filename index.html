@@ -8,15 +8,34 @@
     </style>
   </head>
   <body>
+	<svg xmlns='http://www.w3.org/2000/svg'
+    xmlns:xlink='http://www.w3.org/1999/xlink'
+    viewBox='0 0 600 500'
+    style='background-color: #00000000;'
+    width='600px' height='500px'>
     <path id="path0">
-      <animate id='d0' attributeName='d' begin='0s;d0.end' dur='4000ms'
-        values='m-20,-20 ; m20,100 ; m35,50 ; m40,100'
-        keyTimes='0;0.6;0.9;1' />
+      <animate id='d0' attributeName='d' begin='0s;d0.end' dur='400ms'
+        values='m20,20 h400 ; m60,140 h460'
+        keyTimes='0;1' />
     </path>
-    <h3>
-      <textPath xlink:href='path0'>
+	<path id="path1">
+	  <animate id='d0' attributeName='d' begin='d0.end' dur='0ms'
+		values='m60,140 h460'/>
+	</path>
+    <text fill='#2C68F7' font-size='30' id='txtover'
+        dominant-baseline='auto'
+        x='50%' text-anchor='middle' style='display:none;'>
+      <textPath xlink:href='#path0'>
         Hi,I'm Bing xiu~
       </textPath>
-    </h3>
+    </text>
+	<text fill='#2C68F7' font-size='30' id='txtnotover'
+        dominant-baseline='auto'
+        x='50%' text-anchor='middle' style='display:block;' onmouseover='var element=document.getElementById("txtnotover");element.style.display="none";var noelement=document.getElementById("txtover");noelement.style.display="block";' onmouseout='var element=document.getElementById("txtnotover");element.style.display="block";var noelement=document.getElementById("txtover");noelement.style.display="none";'>
+      <textPath xlink:href='#path1'>
+        Hi,I'm Bing xiu~
+      </textPath>
+    </text>
+	</svg>
   </body>
 </html>
